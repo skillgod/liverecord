@@ -1,0 +1,22 @@
+# HTTP Cookie File downloaded with cookies.txt by Genuinous @genuinous
+# This file can be used by wget, curl, aria2c and other standard compliant tools.
+# Usage Examples:
+#   1) wget -x --load-cookies cookies.txt "https://www.youtube.com/"
+#   2) curl --cookie cookies.txt "https://www.youtube.com/"
+#   3) aria2c --load-cookies cookies.txt "https://www.youtube.com/"
+#
+.youtube.com	TRUE	/	TRUE	1604327076	VISITOR_INFO1_LIVE	et90Z9JXBl8
+.youtube.com	TRUE	/	FALSE	1603955987	PREF	f5=30030&amp;al=zh-CN&amp;cvdm=grid&amp;gl=US
+.youtube.com	TRUE	/	FALSE	1650913799	HSID	AFpjZMRqBuEXofUNC
+.youtube.com	TRUE	/	TRUE	1650913799	SSID	AISlC5uK7Te1sAAgz
+.youtube.com	TRUE	/	FALSE	1650913799	APISID	JXss4KdqVJ6pv6DV/Ay7UQ0FiHNOEbZCpZ
+.youtube.com	TRUE	/	TRUE	1650913799	SAPISID	ON9l8fY0VRdvb6BK/ArMfaXsvp5ZPWSE2m
+.youtube.com	TRUE	/	TRUE	1596265201	__Secure-HSID	AFpjZMRqBuEXofUNC
+.youtube.com	TRUE	/	TRUE	1596265201	__Secure-SSID	AISlC5uK7Te1sAAgz
+.youtube.com	TRUE	/	TRUE	1596265201	__Secure-APISID	JXss4KdqVJ6pv6DV/Ay7UQ0FiHNOEbZCpZ
+.youtube.com	TRUE	/	TRUE	1650913799	__Secure-3PAPISID	ON9l8fY0VRdvb6BK/ArMfaXsvp5ZPWSE2m
+.youtube.com	TRUE	/	FALSE	1650913799	SID	vQcVfnY7iUjy80iUYEWuyLb1oBrOIgEmQbW1KXErzcd1GrkKfj8mmrs77pJBA1zFRH4cAQ.
+.youtube.com	TRUE	/	TRUE	1650913799	__Secure-3PSID	vQcVfnY7iUjy80iUYEWuyLb1oBrOIgEmQbW1KXErzcd1GrkKY1mO-SXnStbotrTmw3aIPg.
+.youtube.com	TRUE	/	TRUE	1650913799	LOGIN_INFO	AFmmF2swRQIhALJZ7fq2hsP1MVwTn7mKSqnVcVCIvkFGPD-ONomgPLubAiAWlHora_ggQDMjAou8HYRgAAV5t9eIUebSfNUOm_hxig:QUQ3MjNmdzhuZF9WSFRvSFRhTFE3dzFzSWRMRk01YnhNcDM0bDQyMk1NSlhSckxXV1FKS0VxckpsUFhXMTQ0SEJkUXVXTDQ5QU5WVXpTRjB3TWRCaVR6SkZnTzRsTnJJUWt1WUx0NEZaWmFGOWdmMGlTY3Fad2JLeW9IM0J2Zm1INXZmWlF6b1RHODdNVEFWUzZaLTR1N0EyaVFiRUhONXd1NFBDZHRuS2ZWU3pQaDFqRHNnSUlF
+.youtube.com	TRUE	/	TRUE	0	YSC	wLBeq6Si0B4
+.youtube.com	TRUE	/	FALSE	1620397544	SIDCC	AJi4QfF5nLGLQNFzRqeNHJDmr83VfedJOWagwp7huoY0qBlxWYr5R76X7CErLtEQGPn4pb-HGir3
