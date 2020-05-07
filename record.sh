@@ -24,7 +24,7 @@ PART_URL="${2}" #频道号码
 FORMAT="${3:-best}" #清晰度
 LOOP_TIME="${4:-loop}" #是否循环或视频分段时间
 LOOPINTERVAL_ENDINTERVAL_LIVESTATUSMIN="${5:-10,10,1}" ; LOOPINTERVAL=$(echo "${LOOPINTERVAL_ENDINTERVAL_LIVESTATUSMIN}" | awk -F"," '{print $1}'); ENDINTERVAL=$(echo "${LOOPINTERVAL_ENDINTERVAL_LIVESTATUSMIN}" | awk -F"," '{print $2}'); [[ "${ENDINTERVAL}" == "" ]] && ENDINTERVAL=${LOOPINTERVAL} ; LIVESTATUSMIN=$(echo "${LOOPINTERVAL_ENDINTERVAL_LIVESTATUSMIN}" | awk -F"," '{print $3}') ; [[ "${LIVESTATUSMIN}" == "" ]] && LIVESTATUSMIN=1 #循环检测间隔,最短录制间隔,录制开始所需连续检测开播次数
-DIR_LOCAL="${6:-record_video/other}" ; mkdir -p "${DIR_LOCAL}" #本地目录
+DIR_LOCAL="${6:-record_video/other}" ; if [[ "${1}" != "youtube-dl" ]]; then mkdir -p "${DIR_LOCAL}" #本地目录
 BACKUP="${7:-nobackup}" #自动备份
 BACKUP_DISK="$(echo "${BACKUP}" | awk -F":" '{print $1}')$(echo "${BACKUP}" | awk -F":" '{print $NF}')" ; DIR_RCLONE="$(echo "${BACKUP}" | awk -F":" '{print $2}'):${DIR_LOCAL}" ; DIR_ONEDRIVE="${DIR_LOCAL}" ; DIR_BAIDUPAN="${DIR_LOCAL}" #选择网盘与网盘路径
 BACKUP_RETRY_MAX=$(echo "${BACKUP}" | awk -F":" '{print $NF}' | grep -o "[0-9]*") ; [[ ! -n "${BACKUP_RETRY_MAX}" ]] && BACKUP_RETRY_MAX=1 #自动备份重试次数
@@ -265,7 +265,8 @@ while true; do
 			(streamlink --loglevel trace --hls-live-restart -o "${DIR_LOCAL}/${FNAME}" "https://www.youtube.com/watch?v=${ID}" "${FORMAT}" > "${DIR_LOCAL}/${FNAME}.log" 2>&1) &
 		fi
 	fi
-	
+	if [[ "${1}" == "youtube-dl" ]]; then
+		(youtube-dl --cookies '/root/liverecord/cookies.txt' --ignore-errors --embed-thumbnail -x --audio-quality 0 -f 'best[height<=480]' -o '%(uploader)s/%(uploader)s_%(release_date)s_%(upload_date)s_%(title)s.%(ext)s' "https://www.youtube.com/watch?v=${ID}" 2>/dev/null)
 	if [[ "${1}" == "twitcast" ]]; then
 		(livedl/livedl -tcas "${PART_URL}" > "${DIR_LOCAL}/${FNAME}.log" 2>&1) &
 	fi
