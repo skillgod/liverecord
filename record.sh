@@ -267,6 +267,7 @@ while true; do
 	fi
 	if [[ "${1}" == "youtube-dl" ]]; then
 		(youtube-dl --cookies '/root/liverecord/cookies.txt' --ignore-errors --embed-thumbnail -x --audio-quality 0 -f 'best[height<=480]' -o '%(uploader)s/%(uploader)s_%(release_date)s_%(upload_date)s_%(title)s.%(ext)s' "https://www.youtube.com/watch?v=${ID}" 2>/dev/null)
+	fi
 	if [[ "${1}" == "twitcast" ]]; then
 		(livedl/livedl -tcas "${PART_URL}" > "${DIR_LOCAL}/${FNAME}.log" 2>&1) &
 	fi
